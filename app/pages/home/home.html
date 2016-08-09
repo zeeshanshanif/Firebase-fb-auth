@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home Page</ion-title>
+    <ion-buttons end>
+      <button (click)="logOut()"><ion-icon name="log-out"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [ngFormModel]="userInfo" (submit)="allUserData($event)">
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input ngControl="name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Age</ion-label>
+      <ion-input ngControl="age" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Comments</ion-label>
+      <ion-input ngControl="comments" type="text"></ion-input>
+    </ion-item>
+
+    <button block type="submit">
+      Send To Firebase
+    </button>
+  </form>
+
+  <button block clear (click)="showFirebaseData()">
+      Show Firebase Data
+    </button>
+</ion-content>
